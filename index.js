@@ -74,7 +74,7 @@ module.exports = async (html, options) => {
     $(element).attr('amp', '');
   });
 
-  $('*').removeAttribute("style");
+  $('*').removeAttr("style");
 
   /* head */
 

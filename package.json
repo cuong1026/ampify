@@ -1,0 +1,77 @@
+{
+  "_from": "ampify",
+  "_id": "ampify@0.5.0",
+  "_inBundle": false,
+  "_integrity": "sha512-i9BOOuga0mqKYT+YXOURy2ufa4DC9zTwVwzLQJ0hK6p0nnnXwC03zqvY5692aj4/YuzXBae3u7OO1OA/IpcLVg==",
+  "_location": "/ampify",
+  "_phantomChildren": {
+    "follow-redirects": "1.5.10"
+  },
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "ampify",
+    "name": "ampify",
+    "escapedName": "ampify",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ampify/-/ampify-0.5.0.tgz",
+  "_shasum": "f12daf0aa678cfbe876a00163ec07663f0ca417f",
+  "_spec": "ampify",
+  "_where": "/mnt/c/Users/Admin/Documents/git/tailieu/tailieu-frontend",
+  "author": {
+    "name": "rkazakov",
+    "email": "ruslan.kazakov@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/rkazakov/ampify/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^0.22.0",
+    "clean-css": "^4.1.11",
+    "image-size": "^0.6.2"
+  },
+  "deprecated": false,
+  "description": "Convert plain HTML to Google Accelerated Mobile Pages (AMP)",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "jest": "^24.7.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "homepage": "https://github.com/rkazakov/ampify#readme",
+  "keywords": [
+    "html",
+    "transform",
+    "amp",
+    "amp-img",
+    "amp-video",
+    "amp-youtube",
+    "amp-analytics"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "ampify",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkazakov/ampify.git"
+  },
+  "scripts": {
+    "coverage": "jest --coverage",
+    "lint": "eslint ./*.js test",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "version": "0.5.0"
+}

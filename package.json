@@ -34,7 +34,7 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.20.0",
     "cheerio": "^0.22.0",
     "clean-css": "^4.1.11",
     "image-size": "^0.6.2"

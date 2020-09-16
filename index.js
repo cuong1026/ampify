@@ -4,6 +4,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const sizeOf = require('image-size');
 const CleanCss = require('clean-css');
+const urlencode = require('urlencode');
 
 module.exports = async (html, options) => {
   const tags = {
@@ -38,7 +39,7 @@ module.exports = async (html, options) => {
       // set a flag
       responses[src] = true;
       const imageUrl = element.attribs.src;
-      promises.push(axios.get(imageUrl, { responseType: 'arraybuffer' })
+      promises.push(axios.get(urlencode(imageUrl), { responseType: 'arraybuffer' })
         .then((response) => {
           responses[src] = response;
         }));

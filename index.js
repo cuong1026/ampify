@@ -7,7 +7,7 @@ const CleanCss = require('clean-css');
 const urlencode = require('urlencode');
 
 const imageUrlRegex = /(.*\/)(.+\..+)/;
-const utf8Regex = /[\u0100-\uFFFF]/;
+const utf8Regex = /[^\u0000-\u007f]/;
 
 module.exports = async (html, options) => {
     const tags = {

@@ -6,7 +6,7 @@ const sizeOf = require('image-size');
 const CleanCss = require('clean-css');
 const urlencode = require('urlencode');
 
-const attributeToBeRemoved = ["nowrap", style];
+const attributeToBeRemoved = ["nowrap", "style"];
 const imageUrlRegex = /(.*\/)(.+\..+)/;
 const utf8Regex = /[^\u0000-\u007f]/;
 

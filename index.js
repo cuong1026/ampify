@@ -89,17 +89,6 @@ module.exports = async (html, options) => {
 
     $('*').removeAttr("style");
 
-    /* head */
-
-    /* main amp library */
-    $('head script[src="https://cdn.ampproject.org/v0.js"]').remove();
-    $('head').prepend('<script async src="https://cdn.ampproject.org/v0.js"></script>');
-
-    /* meta charset */
-    $('head meta[charset="utf-8"]').remove();
-    $('head meta[charset="UTF-8"]').remove();
-    $('head').prepend('<meta charset="utf-8">');
-
     /* google analytics */
     $('script').each((index, element) => {
         const src = $(element).attr('src');
@@ -130,11 +119,6 @@ module.exports = async (html, options) => {
             $(element).remove();
         }
     });
-
-    /* meta viewport */
-    if ($('head meta[content="width=device-width,minimum-scale=1,initial-scale=1"]').length === 0) {
-        $('head').append('<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">');
-    }
 
     /* style amp-boilerplate */
     if ($('head style[amp-boilerplate]').length === 0) {

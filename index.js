@@ -6,6 +6,7 @@ const sizeOf = require('image-size');
 const CleanCss = require('clean-css');
 const urlencode = require('urlencode');
 
+const attributeToBeRemoved = ["nowrap", style];
 const imageUrlRegex = /(.*\/)(.+\..+)/;
 const utf8Regex = /[^\u0000-\u007f]/;
 
@@ -87,7 +88,7 @@ module.exports = async (html, options) => {
         $(element).attr('amp', '');
     });
 
-    $('*').removeAttr("style");
+    attributeToBeRemoved.forEach($('*').removeAttr)
 
     /* google analytics */
     $('script').each((index, element) => {

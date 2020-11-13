@@ -11,7 +11,7 @@ const utf8Regex = /[^\u0000-\u007f]/;
 
 module.exports = async (html, options) => {
     const tags = {
-        amp: ['img', 'video'],
+        amp: ['img', 'video', "audio"],
     };
 
     let youtube = false;

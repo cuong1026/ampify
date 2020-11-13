@@ -207,8 +207,8 @@ module.exports = async (html, options) => {
         const ampElement = Object.assign(element, {
             name: `amp-audio`,
         });
-        $(element).attr("width","500");
-        $(element).attr("height","300");
+        $(element).attr("width","300");
+        $(element).attr("height","59");
         $(element).html($(ampElement).html());
     });
 

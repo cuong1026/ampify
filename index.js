@@ -11,7 +11,7 @@ const utf8Regex = /[^\u0000-\u007f]/;
 
 module.exports = async (html, options) => {
     const tags = {
-        amp: ['img', 'video', "audio"],
+        amp: ['img', 'video'],
     };
 
     let youtube = false;
@@ -202,6 +202,15 @@ module.exports = async (html, options) => {
     if (youtube) {
         $('head').prepend('<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js">');
     }
+
+    $("audio").each((index, element) => {
+        const ampElement = Object.assign(element, {
+            name: `amp-audio`,
+        });
+        $(element).width(300);
+        $(element).height(54);
+        $(element).html($(ampElement).html());
+    });
 
     /* amp tags */
     $(tags.amp.join(',')).each((index, element) => {

@@ -86,9 +86,10 @@ module.exports = async (html, options) => {
     $('html').each((index, element) => {
         $(element).attr('amp', '');
     });
-3
+
     $('*').removeAttr("nowrap");
     $('*').removeAttr("style");
+    $('*').removeAttr("clear");
 
     /* google analytics */
     $('script').each((index, element) => {

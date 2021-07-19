@@ -90,6 +90,8 @@ module.exports = async (html, options) => {
     $('*').removeAttr("nowrap");
     $('*').removeAttr("style");
     $('*').removeAttr("clear");
+    $('*').removeAttr("frame");
+    $('*').removeAttr("rules");
 
     /* google analytics */
     $('script').each((index, element) => {

@@ -92,6 +92,7 @@ module.exports = async (html, options) => {
     $('*').removeAttr("clear");
     $('*').removeAttr("frame");
     $('*').removeAttr("rules");
+    $('*').removeAttr("scope");
 
     /* google analytics */
     $('script').each((index, element) => {

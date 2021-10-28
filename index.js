@@ -48,12 +48,22 @@ module.exports = async (html, options) => {
                 promises.push(axios.get(encodedImageUrl, {responseType: 'arraybuffer'})
                     .then((response) => {
                         responses[src] = response;
+                    }).catch(error => {
+                        if (error?.response?.status === 404) {
+                            responses[src] = false;
+                            console.error("[404] Ampify src (" + src + ")");
+                        }
                     }));
                 return;
             }
             promises.push(axios.get(imageUrl, {responseType: 'arraybuffer'})
                 .then((response) => {
                     responses[src] = response;
+                }).catch(error => {
+                    if (error?.response?.status === 404) {
+                        responses[src] = false;
+                        console.error("[404] Ampify src (" + src + ")");
+                    }
                 }));
         }
     });
@@ -148,6 +158,11 @@ module.exports = async (html, options) => {
             }
         } else if (src.indexOf('//') !== -1) {
             const response = responses[src];
+            if (response === false) {
+                if (options.ignoreImageNotFound) {
+                    return $(element).remove();
+                }
+            }
             if (response === true) {
                 throw new Error('No image for', src);
             }

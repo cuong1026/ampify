@@ -108,6 +108,7 @@ module.exports = async (html, options) => {
     $('*').removeAttr("contenteditable");
     $('*').removeAttr("match");
     $('*').removeAttr("loopnumber");
+    $('*').removeAttr("e");
 
     /* google analytics */
     $('script').each((index, element) => {

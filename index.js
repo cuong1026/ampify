@@ -104,11 +104,13 @@ module.exports = async (html, options) => {
     $('*').removeAttr("rules");
     $('*').removeAttr("scope");
     $('*').removeAttr("width");
+    $('*').removeAttr("border");
     $('*').removeAttr("loading");
     $('*').removeAttr("contenteditable");
     $('*').removeAttr("match");
     $('*').removeAttr("loopnumber");
     $('*').removeAttr("e");
+    $('*').find('script').remove();
 
     /* google analytics */
     $('script').each((index, element) => {
